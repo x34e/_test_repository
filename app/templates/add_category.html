@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block title %}
-  Добавить новость
+  Добавить категорию
 {% endblock title %}
 {% block content %}
-  <h1>Добавить новость</h1>
+  <h1>Добавить категорию</h1>
   <hr>
   <form method="POST" action="" novalidate>
     {{ form.csrf_token }}
@@ -18,23 +18,6 @@
           <span>{{ error }}</span>
         </div>
       {% endfor %}
-      <div class="form-group">
-        <label >
-          {{ form.text.label }}
-        </label>
-        {{ form.text(class="form-control", rows="5") }}
-      </div>
-      {% for error in form.text.errors %}
-        <div class="alert alert-danger" role="alert">
-          <span>{{ error }}</span>
-        </div>
-      {% endfor %}
-      <div class="form-group">
-        <label >
-          {{ form.category.label }}
-        </label>
-        {{ form.category(class="form-control") }}
-      </div>
     {{ form.submit(class="btn btn-primary btn-lg") }}
   </form>
 {% endblock content %}
